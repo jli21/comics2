@@ -22,6 +22,8 @@ public class InventoryView extends JPanel implements ActionListener {
     private JScrollPane scroll;
     private JButton addProduct;
     private JButton viewCart;
+    private JButton customersButton;
+    private JButton ordersButton;
     
     /**
      * Creates an instance of the InventoryView class.
@@ -94,11 +96,20 @@ public class InventoryView extends JPanel implements ActionListener {
     
     private void initFooter() {
         JPanel panel = new JPanel(new BorderLayout());
+        JPanel subPanel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(10, 15, 15, 15));
         
         addProduct = new JButton("Add Product");
         addProduct.putClientProperty("id", -1L);
         addProduct.addActionListener(this);
+        
+        customersButton = new JButton("Customers");
+        customersButton.putClientProperty("id", -1L);
+        customersButton.addActionListener(this);
+        
+        ordersButton = new JButton("Orders");
+        ordersButton.putClientProperty("id", -1L);
+        ordersButton.addActionListener(this);
         
         viewCart = new JButton("Proceed to Cart");
         viewCart.putClientProperty("id", -1L);
@@ -106,6 +117,9 @@ public class InventoryView extends JPanel implements ActionListener {
         
         panel.add(addProduct, BorderLayout.WEST);
         panel.add(viewCart, BorderLayout.EAST);
+        subPanel.add(ordersButton, BorderLayout.EAST);
+        subPanel.add(customersButton, BorderLayout.WEST);
+        panel.add(subPanel, BorderLayout.CENTER);
         this.add(panel, BorderLayout.SOUTH);
     }
     
@@ -123,6 +137,10 @@ public class InventoryView extends JPanel implements ActionListener {
             manager.switchTo(MidtownComics.ProductView);
         } else if (source.equals(viewCart)) {
             manager.switchTo(MidtownComics.CartView);
+        } else if (source.equals(customersButton)) {
+        	manager.switchTo(MidtownComics.ClientsView);
+        } else if (source.equals(ordersButton)) {
+        	manager.switchTo(MidtownComics.OrderListView);
         }
     }
 }

@@ -23,7 +23,7 @@ public class Order {
 		this.orderId = Order.lastOrderId++; // auto-generate ID
 		this.customer = new Customer();
 		this.orderDate = getDate();
-		this.status = "Open";
+		this.status = "O";
 		this.items = new ArrayList<>();
 		this.total = 0;
 	}
@@ -88,6 +88,10 @@ public class Order {
 	public long getOrderId() {
 		return orderId;
 	}
+	
+	public void setOrderId(long id) {
+		this.orderId = id;
+	}
 
 	/**
 	 * Returns the Customer.
@@ -98,6 +102,10 @@ public class Order {
 	public Customer getCustomer() {
 		return customer;
 	}
+	
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	/**
 	 * Returns the order date.
@@ -107,6 +115,10 @@ public class Order {
 
 	public long getOrderDate() {
 		return orderDate;
+	}
+	
+	public void setOrderDate(long orderDate) {
+		this.orderDate = orderDate;
 	}
 
 	/**
@@ -146,7 +158,11 @@ public class Order {
 	 */
 
 	public double getTotal() {
-		return total;
+		return Math.round(total*100)/100;
+	}
+	
+	public void setTotal(double total) {
+		this.total = total;
 	}
 
 	/*

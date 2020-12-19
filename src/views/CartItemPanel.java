@@ -83,6 +83,10 @@ public class CartItemPanel extends JPanel implements ActionListener {
     
     private JPanel getActionPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        double val = manager.getSubtotal(product);
+        val = val * 100;
+        val = Math.round(val);
+        val /= 100;
         
         JLabel price = new JLabel("$" + manager.getSubtotal(product), SwingConstants.CENTER);        
         price.setFont(new Font("DialogInput", Font.BOLD, 15));

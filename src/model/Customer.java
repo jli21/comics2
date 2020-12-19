@@ -2,7 +2,7 @@ package model;
 
 public class Customer {
 	
-	private static long lastCustomerId = 1L; // initial customer ID
+	public static long lastCustomerId = 1L; // initial customer ID
 
     private long customerId;
     private String firstName;
@@ -19,7 +19,15 @@ public class Customer {
      */
 
     public Customer() {
-        this.customerId = Customer.lastCustomerId++; // auto-generate ID
+        this.customerId = Customer.lastCustomerId++;
+        this.firstName = "John";
+        this.lastName = "Doe";
+        this.phone = 1234567890;
+        this.email = "jdoe@ucvts.org";
+        this.streetAddress = "1600 Pennsylvania Avenue";
+        this.city = "Seattle";
+        this.state = "WA";
+        this.postalCode = "12345";
     }
 
     /**
@@ -64,6 +72,10 @@ public class Customer {
      *
      * @return firstName
      */
+    
+    public void setCustomerId(long id) {
+    	this.customerId = id;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -151,7 +152,15 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         for (Product p : manager.getInventory()) {
             if (id.longValue() == p.getProductId() && type.equals("BUY")) {
                 if (!manager.productExistsInOrder(p)) {
-                    manager.addItemToOrder(new OrderItem(p));
+                    try {
+						manager.addItemToOrder(new OrderItem(p));
+						manager.attachProduct(p);
+						manager.refreshCart();
+						manager.switchTo(MidtownComics.CartView);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
                 }
             } else if (id.longValue() == p.getProductId() && type.equals("EDIT")) {
                 manager.attachProduct(p);

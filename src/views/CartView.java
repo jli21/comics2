@@ -123,7 +123,8 @@ public class CartView extends JPanel implements ActionListener {
             manager.switchTo(MidtownComics.InventoryView);
         } else if (source.equals(checkout)) {
             if (manager.getOrder() != null && manager.getOrder().getItems().size() > 0) {
-                manager.switchTo(MidtownComics.OrderView);
+            	manager.updateTotal();
+                manager.switchTo(MidtownComics.PaymentView);
             }
         }
     }
