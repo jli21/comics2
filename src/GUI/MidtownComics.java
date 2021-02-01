@@ -45,8 +45,6 @@ public class MidtownComics extends JFrame {
         JPanel views = new JPanel(new CardLayout());
         ViewManager manager = ViewManager.getInstance(views);
 
-        // add child views to the parent container
-
         views.add(new InventoryView(manager), InventoryView);
         views.add(new ProductView(manager), ProductView);
         views.add(new CartView(manager), CartView);
@@ -56,7 +54,6 @@ public class MidtownComics extends JFrame {
         views.add(new OrderListView(manager), OrderListView);
         views.add(new PaymentView(manager), PaymentView);
         
-        // configure application frame
         
         this.getContentPane().add(views);
         this.setBounds(0, 0, 750, 750);
@@ -66,7 +63,6 @@ public class MidtownComics extends JFrame {
         this.setVisible(true);
     }
 
-    ////////// MAIN METHOD /////////////////////////////////////////////////////////
     
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {

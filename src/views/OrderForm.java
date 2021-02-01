@@ -95,9 +95,6 @@ public class OrderForm extends JPanel {
         errorLabel.setText(message);
     }
     
-    /*
-     * Initializes all UI components.
-     */
     
     private void init(Order order) {
         this.setLayout(null);
@@ -109,11 +106,7 @@ public class OrderForm extends JPanel {
         initCustomerField(order);
         initErrorMessage();
     }
-    
-    /*
-     * Initializes the product ID UI field.
-     */
-    
+
     private void initOrderId(Order order) {
         JLabel label = new JLabel("Order Id");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -128,10 +121,6 @@ public class OrderForm extends JPanel {
         this.add(orderIdField);
     }
     
-    /*
-     * Initializes the title UI field.
-     */
-    
     private void initOrderDate(Order order) {
         JLabel label = new JLabel("Order Date");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -145,10 +134,7 @@ public class OrderForm extends JPanel {
         this.add(label);
         this.add(orderDateField);
     }
-    
-    /*
-     * Initializes the author UI field.
-     */
+
     
     private void initStatus(Order order) {
         JLabel label = new JLabel("Order Status");
@@ -164,9 +150,6 @@ public class OrderForm extends JPanel {
         this.add(orderStatusField);
     }
     
-    /*
-     * Initializes the release date UI dropdown menus.
-     */
     
     private void initTotal(Order order) {
         JLabel label = new JLabel("Order Status");
@@ -182,9 +165,7 @@ public class OrderForm extends JPanel {
         this.add(orderTotalField);
     }
     
-    /*
-     * Initializes the issue UI field.
-     */
+
     
     private void initCustomerField(Order order) {
         JLabel label = new JLabel("Customer");
@@ -200,11 +181,7 @@ public class OrderForm extends JPanel {
         this.add(customerIdField);
     }
 
-    
-    /*
-     * Initializes the error message UI field.
-     */
-    
+
     private void initErrorMessage() {
         errorLabel = new JLabel("", SwingConstants.CENTER);
         errorLabel.setFont(new Font("DialogInput", Font.ITALIC, 14));
@@ -214,10 +191,7 @@ public class OrderForm extends JPanel {
         this.add(errorLabel);
     }
     
-    /*
-     * Resets all UI fields to their default values.
-     */
-    
+
     private void clearFields() {
         orderIdField.setText("");
         orderDateField.setText("");
@@ -226,10 +200,7 @@ public class OrderForm extends JPanel {
         customerIdField.setText("");
     }
     
-    /*
-     * Parses a date value into YYYYMMDD format.
-     */
-    
+
     private long parseDate(Long numberDate) {
     	String date = String.valueOf(numberDate);
         int year = Integer.parseInt(date.substring(0,2));
@@ -238,11 +209,7 @@ public class OrderForm extends JPanel {
         
         return Long.parseLong(String.format("%d%02d%02d", year, month, day));
     }
-    
-    /*
-     * Parses a numeric price from the textfield.
-     */
-    
+
     private double parseTotal() {
         return Double.parseDouble(orderTotalField.getText());
     }

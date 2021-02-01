@@ -24,42 +24,15 @@ public class OrderDAO {
     
     public static Order getOrder(long orderId) throws SQLException {
         Order order = null;
-        
-        // first, we need to establish a connection to the database. we
-        // call getConnection, which will return a new connection object.
-        
+
         Connection conn = DAO.getConnection();
-        
-        // a statement is a query we'll execute on the database. this
-        // includes select, insert, update, and delete statements. a
-        // prepared statement is a parameterized statement that allows
-        // us to pass in values to predefined placeholders.
-        
-        PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM orders WHERE orderId = ?");
-        
-        // we need to provide an actual value for our placeholder.
-        
-        pstmt.setLong(1, orderId);
-        
-        // when we execute our query (a select statement), it's going to
-        // return zero or more rows. we'll store that result in what is
-        // called a result set.
-        
-        ResultSet rs = pstmt.executeQuery();
-        
-        // a result set has something called a cursor that points at the
-        // current row. initially, this cursor is positioned before the
-        // first row (i.e., it points at nothing). we need to call next
-        // to tell the cursor to advance to the first row.
-        //
-        // next returns a boolean value. if it returns true, that means
-        // the cursor successfully advanced to the next row (which, in this
-        // case, is the first row).
-        //
-        // our query is designed to return a single row. if next returns
-        // true, that means we've got a row. we'll use that row to build
-        // a product object.
             
+        PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM orders WHERE orderId = ?");
+  
+        pstmt.setLong(1, orderId);
+
+        ResultSet rs = pstmt.executeQuery();
+
         if (rs.next()) {
             order = new Order();
             
@@ -70,10 +43,7 @@ public class OrderDAO {
             order.setCustomer((Customer)(rs.getRef(5)).getObject());
             
         }
-        
-        // we're done with the result set, prepared statement, and connection
-        // objects, so we should close them. this is a form of memory management.
-                
+                 
         rs.close();
         pstmt.close();
         conn.close();
@@ -219,12 +189,7 @@ public class OrderDAO {
     public static void deleteOrder(Order order) throws SQLException {
         Connection conn = DAO.getConnection();
         PreparedStatement pstmt = conn.prepareStatement("DELETE FROM orders WHERE id = ?");
-        
-        // we're deleting a product from the table, so we only need the primary key
-        // (in this case, the id column). a primary key, which can be a combination
-        // of columns (called a composite key) is the value that is guaranteed to
-        // uniquely identify a row in the table.
-        
+
         pstmt.setLong(1, order.getOrderId());
         
         pstmt.executeUpdate();

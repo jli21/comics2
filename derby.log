@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Sat Dec 19 14:35:45 EST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0176-7c80-351d-00000f28e9a8 
-on database directory C:\Users\Aaron\eclipse-workspace\comics\midtowncomicsdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a 
-Loaded from file:/C:/Users/Aaron/eclipse-workspace/comics/lib/derby.jar
+Sat Jan 16 00:39:54 EST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0177-09b5-0461-00000f2a2158 
+on database directory C:\Users\jli21\eclipse-workspace\comics\midtowncomicsdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
+Loaded from file:/C:/Users/jli21/eclipse-workspace/comics/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=11.0.8+10-LTS
-user.dir=C:\Users\Aaron\eclipse-workspace\comics
+java.runtime.version=15.0.1+9-18
+user.dir=C:\Users\jli21\eclipse-workspace\comics
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

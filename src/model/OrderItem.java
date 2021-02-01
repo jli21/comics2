@@ -2,7 +2,7 @@ package model;
 
 public class OrderItem {
 	
-	private static long lastItemId = 1L; // initial item ID
+	private static long lastItemId = 1L; 
 
     private long itemId;
     private Product product;
@@ -15,7 +15,7 @@ public class OrderItem {
      */
 
     public OrderItem(Product product) {
-        this.itemId = OrderItem.lastItemId++; // auto-generate ID
+        this.itemId = OrderItem.lastItemId++; 
         this.product = product;
         this.quantity = 1;
     }

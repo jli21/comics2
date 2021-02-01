@@ -46,19 +46,12 @@ public class OrderListView extends JPanel implements ActionListener {
         initOrders();
     }
     
-    /*
-     * Initializes all UI components.
-     */
-    
+
     private void init() {        
         initHeader();
         initOrders();
         initFooter();
     }
-    
-    /*
-     * Initializes the header UI components.
-     */
     
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -71,9 +64,6 @@ public class OrderListView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.NORTH);
     }
     
-    /*
-     * Initializes the inventory list UI components.
-     */
     
     private void initOrders() {
         JPanel body = new JPanel();
@@ -88,10 +78,6 @@ public class OrderListView extends JPanel implements ActionListener {
         this.add(scroll, BorderLayout.CENTER);
     }
     
-    /*
-     * Initializes the footer UI components.
-     */
-    
     private void initFooter() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(10, 15, 15, 15));
@@ -104,11 +90,6 @@ public class OrderListView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
     
-    /*
-     * Handles button clicks in this view.
-     *
-     * @param e the event that triggered this action
-     */
     
     @Override
     public void actionPerformed(ActionEvent e) {

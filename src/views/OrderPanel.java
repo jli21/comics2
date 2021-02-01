@@ -40,10 +40,6 @@ public class OrderPanel extends JPanel implements ActionListener {
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
     }
     
-    /*
-     * Initializes all UI components.
-     */
-
     private void init(Order o) {
         JPanel content = getContentPanel(o);
         JPanel actions = getActionPanel(o);
@@ -52,10 +48,7 @@ public class OrderPanel extends JPanel implements ActionListener {
         this.add(actions, BorderLayout.EAST);
         this.add(new JSeparator(), BorderLayout.SOUTH);
     }
-    
-    /*
-     * Initializes the content panel UI components.
-     */
+
     
     private JPanel getContentPanel(Order o) {
         JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -85,9 +78,6 @@ public class OrderPanel extends JPanel implements ActionListener {
         return getMonth(month) + " " + day + ", " + year;
     }
     
-    /*
-     * Converts a numeric month to its string equivalent.
-     */
     
     private String getMonth(int month) {
         switch (month) {
@@ -108,22 +98,16 @@ public class OrderPanel extends JPanel implements ActionListener {
     }
     
     
-    /*
-     * Initializes the action panel UI components.
-     */
     
     private JPanel getActionPanel(Order o) {
         JPanel panel = new JPanel(new GridLayout(0, 1));
         
-//        JLabel name = new JLabel("$" + c.getFirstName() + c.getLastName(), SwingConstants.CENTER);
-//        name.setFont(new Font("DialogInput", Font.BOLD, 15));
-        
+
         JButton edit = new JButton("Edit");
         edit.putClientProperty("id", o.getOrderId());
         edit.putClientProperty("type", "EDIT");
         edit.addActionListener(this);
 
-//        panel.add(name);
         panel.add(edit);
         
         return panel;

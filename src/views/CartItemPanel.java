@@ -77,9 +77,7 @@ public class CartItemPanel extends JPanel implements ActionListener {
         return panel;
     }
     
-    /*
-     * Initializes action panel UI components.
-     */
+
     
     private JPanel getActionPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -96,11 +94,7 @@ public class CartItemPanel extends JPanel implements ActionListener {
         return panel;
     }
     
-    /*
-     * Handles combobox selections in this view.
-     *
-     * @param e the event that triggered this action
-     */
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -26,11 +26,6 @@ public class ProductView extends JPanel implements ActionListener {
     private JButton remove;
     private JButton cancel;
 
-    /**
-     * Creates an instance of the ProductView class.
-     * 
-     * @param manager the controller
-     */
     
     public ProductView(ViewManager manager) {
         super(new BorderLayout());
@@ -40,11 +35,7 @@ public class ProductView extends JPanel implements ActionListener {
         this.init();
     }
     
-    /**
-     * Sets the Product associated with this view.
-     *
-     * @param product the new product
-     */
+
 
     public void setProduct(Product product) {
         this.product = product;
@@ -53,19 +44,13 @@ public class ProductView extends JPanel implements ActionListener {
         productForm.updateFields(product);
     }
 
-    /*
-     * Initializes all UI components.
-     */
 
     private void init() {        
         initHeader();
         initProductForm();
         initFooter();
     }
-    
-    /*
-     * Initializes header UI components.
-     */
+
 
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -78,17 +63,10 @@ public class ProductView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.NORTH);
     }
     
-    /*
-     * Initializes the productform.
-     */
 
     private void initProductForm() {
         this.add(new JScrollPane(productForm), BorderLayout.CENTER);
     }
-    
-    /*
-     * Initializes footer UI components.
-     */
 
     private void initFooter() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
@@ -110,11 +88,7 @@ public class ProductView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
 
-    /*
-     * Handles button clicks in this view.
-     *
-     * @param e the event that triggered this action
-     */
+ 
 
     @Override
     public void actionPerformed(ActionEvent e) {

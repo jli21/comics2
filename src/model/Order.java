@@ -165,10 +165,6 @@ public class Order {
 		this.total = total;
 	}
 
-	/*
-	 * Gets the current date in YYYYMMDD format.
-	 */
-
 	private long getDate() {
 		LocalDateTime now = LocalDateTime.now();
 
@@ -178,10 +174,6 @@ public class Order {
 
 		return Long.valueOf(year + month + day);
 	}
-
-	/*
-	 * Updates the order total using the price of each item.
-	 */
 
 	private void updateTotal() {
 		if (items == null) {

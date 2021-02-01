@@ -1,103 +1,3 @@
-//package views;
-//
-//import java.awt.BorderLayout;
-//import java.awt.Font;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-//import java.sql.SQLException;
-//
-//import javax.swing.JButton;
-//import javax.swing.JLabel;
-//import javax.swing.JPanel;
-//import javax.swing.SwingConstants;
-//import javax.swing.border.EmptyBorder;
-//
-//import model.Order;
-//import controller.ViewManager;
-//
-//@SuppressWarnings("serial")
-//public class OrderView extends JPanel implements ActionListener {
-//    
-//    private ViewManager manager;
-//    private PaymentForm form;
-//    private JLabel total;
-//    private JButton submit;
-//    private Order order;
-//    private OrderForm orderForm;
-//    
-//    public OrderView(ViewManager manager) {
-//        super(new BorderLayout());
-//        
-//        this.manager = manager;
-//        this.orderForm = new OrderForm();
-//        this.init();
-//    }
-//    
-//
-//
-//    /**
-//     * Updates the order total label.
-//     * 
-//     * @param total the new total
-//     */
-//    
-//    public void updateOrderTotal(double total) {
-//        this.total.setText("Order Total: $" + total);
-//    }
-//    
-//    public void setOrder(Order order) {
-//    	this.order = order;
-//    	orderForm.updateFields(order);
-//    }
-//    
-//    /**
-//     * Clears all fields.
-//     */
-//    
-//    public void clearOrder() {
-//        total.setText("");
-//        form.clearFields();
-//    }
-//    
-//    /*
-//     * Initializes all UI components.
-//     */
-//
-//    private void init() {
-//        submit = new JButton("Submit");
-//        submit.addActionListener(this);
-//        
-//        total = new JLabel("Order Total: $", SwingConstants.RIGHT);
-//        total.setFont(new Font("DialogInput", Font.BOLD, 16));
-//        total.setBorder(new EmptyBorder(10, 10, 10, 10));
-//        
-//        form = new PaymentForm();
-//        
-//        this.add(total, BorderLayout.NORTH);
-//        this.add(form, BorderLayout.CENTER);
-//        this.add(submit, BorderLayout.SOUTH);
-//    }
-//    
-//    /*
-//     * Handles button clicks in this view.
-//     *
-//     * @param e the event that triggered this action
-//     */
-//
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        JButton source = (JButton) e.getSource();
-//        
-//        if (source.equals(submit)) {
-//            try {
-//				manager.submitOrder();
-//			} catch (SQLException e1) {
-//				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
-//        }
-//    }
-//}
 
 package views;
 
@@ -162,9 +62,7 @@ public class OrderView extends JPanel implements ActionListener {
         initOrderForm();
     }
     
-    /*
-     * Initializes all UI components.
-     */
+
     
     private void init() {        
         initHeader();
@@ -172,10 +70,7 @@ public class OrderView extends JPanel implements ActionListener {
         initFooter();
     }
     
-    /*
-     * Initializes the header UI components.
-     */
-    
+
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
         
@@ -187,18 +82,13 @@ public class OrderView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.NORTH);
     }
     
-    /*
-     * Initializes the inventory list UI components.
-     */
+
     
     	private void initOrderForm() {
             this.add(new JScrollPane(orderForm), BorderLayout.CENTER);
     }
     
-    /*
-     * Initializes the footer UI components.
-     */
-    
+
     private void initFooter() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(10, 15, 15, 15));
@@ -220,12 +110,7 @@ public class OrderView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
     
-    /*
-     * Handles button clicks in this view.
-     *
-     * @param e the event that triggered this action
-     */
-    
+  
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
